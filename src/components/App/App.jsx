@@ -20,6 +20,7 @@ import LandingPage from "../LandingPage/LandingPage";
 import LoginPage from "../LoginPage/LoginPage";
 import RegisterPage from "../RegisterPage/RegisterPage";
 import AddToy from "../AddToy/AddToy";
+import CommunityEntries from "../CommunityEntries/CommunityEntries";
 
 import "./App.css";
 
@@ -74,6 +75,13 @@ function App() {
             path="/addtoy"
           >
             <AddToy />
+          </ProtectedRoute>
+          <ProtectedRoute
+            // logged in shows AddToy page
+            exact
+            path="/communityentries"
+          >
+            <CommunityEntries />
           </ProtectedRoute>
 
           <Route exact path="/login">
