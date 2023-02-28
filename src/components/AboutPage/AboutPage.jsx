@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 // This is one of our simplest components
 // It doesn't have local state,
@@ -9,7 +9,14 @@ function AboutPage() {
   return (
     <div className="container">
       <div>
-        <p>This about page is for anyone to read!</p>
+        <p>
+          Give a Dog a Bone is an application that can be used to create a
+          record of your dog’s favorite toys. Here you have the ability to add
+          comments to the toys you create, apply different tags for
+          organization, and provide images and links. Other users can join in
+          and see each other’s lists of toys and “like” the toys they are
+          interested in.
+        </p>
       </div>
     </div>
   );
