@@ -21,6 +21,7 @@ import LoginPage from "../LoginPage/LoginPage";
 import RegisterPage from "../RegisterPage/RegisterPage";
 import AddToy from "../AddToy/AddToy";
 import CommunityEntries from "../CommunityEntries/CommunityEntries";
+import ToyView from "../ToyView/ToyView";
 
 import "./App.css";
 
@@ -77,11 +78,19 @@ function App() {
             <AddToy />
           </ProtectedRoute>
           <ProtectedRoute
-            // logged in shows AddToy page
+            // logged in shows CommunityEntries page
             exact
             path="/communityentries"
           >
             <CommunityEntries />
+          </ProtectedRoute>
+
+          <ProtectedRoute
+            // logged in shows ToyView page
+            exact
+            path="/toyview"
+          >
+            <ToyView />
           </ProtectedRoute>
 
           <Route exact path="/login">
