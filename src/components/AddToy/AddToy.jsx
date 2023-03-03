@@ -10,7 +10,7 @@ function AddToy() {
   const handleSubmit = (event) => {
     dispatch({
       type: "ADD_TOY",
-      payload: 
+      payload: [dispatch],
     });
   };
 

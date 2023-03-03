@@ -1,5 +1,5 @@
 const toyViewReducer = (state = [], action) => {
-  console.log("in toyViewReducer", action.payload);
+  // console.log("in toyViewReducer", action.payload);
   switch (action.type) {
     case "SET_TOYS":
       return action.payload;
