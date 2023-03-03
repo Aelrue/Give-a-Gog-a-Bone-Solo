@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import LogOutButton from "../LogOutButton/LogOutButton";
 import "./Nav.css";
 import { useSelector } from "react-redux";
-import { useState } from "react";
 
 function Nav() {
   const user = useSelector((store) => store.user);
@@ -32,9 +31,9 @@ function Nav() {
             <Link className="navLink" to="/info">
               Info Page
             </Link>
-            {/* <Link className="navLink" to="/addtoy">
+            <Link className="navLink" to="/addtoy">
               Add Toy
-            </Link> */}
+            </Link>
 
             <LogOutButton className="navLink" />
           </>

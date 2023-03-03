@@ -1,10 +1,18 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory, useState } from "react-router-dom";
 import "./AddToy.css";
 
 function AddToy() {
   const history = useHistory();
+  const dispatch = useDispatch();
+
+  const handleSubmit = (event) => {
+    dispatch({
+      type: "ADD_TOY",
+      payload: 
+    });
+  };
 
   return (
     <div className="buttons">
@@ -34,6 +42,10 @@ function AddToy() {
         <form>
           <input required placeholder="Dog Name" type="text"></input>
           <br />
+
+          <input required placeholder="Toy Name" type="text"></input>
+          <br />
+
           <label htmlFor="activity">Activity:</label>
           <select id="activity" name="activity">
             <option value="chew">Chew</option>
@@ -43,6 +55,7 @@ function AddToy() {
             <option value="tug">Tug</option>
           </select>
           <br />
+
           <label htmlFor="texture">Toy Texture:</label>
           <select id="texture" name="texture">
             <option value="hard">Hard</option>
@@ -50,6 +63,7 @@ function AddToy() {
             <option value="soft">Soft</option>
           </select>
           <br />
+
           <label htmlFor="features">Features:</label>
           <select id="features" name="features">
             <option value="xtough">Extra Tough</option>
@@ -62,6 +76,7 @@ function AddToy() {
             <option value="stuffing">Stuffing</option>
           </select>
           <br />
+
           <label htmlFor="dog_size">Dog Size:</label>
           <select id="dog_size" name="dog_size">
             <option value="mini">Mini</option>
@@ -71,9 +86,21 @@ function AddToy() {
             <option value="xlarge">Extra Large</option>
           </select>
           <br />
+
           <input placeholder="Purchase Link" type="text"></input>
           <br />
-          <input type="submit" />
+
+          <input placeholder="Comments" type="text"></input>
+          <br />
+
+          <button
+            type="button"
+            onClick={() => {
+              history.push("/user");
+            }}
+          >
+            Submit
+          </button>
         </form>
       </div>
     </div>
