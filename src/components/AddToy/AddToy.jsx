@@ -1,13 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useHistory, useState } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import "./AddToy.css";
 
 function AddToy() {
   const history = useHistory();
   const dispatch = useDispatch();
+  const [activity, setActivity] = useState("");
 
   const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log("in handlesubmit", activity);
     dispatch({
       type: "ADD_TOY",
       payload: [dispatch],
@@ -40,14 +43,23 @@ function AddToy() {
         <p>Add a new toy to your account by following the prompts below!</p>
 
         <form>
-          <input required placeholder="Dog Name" type="text"></input>
+          {/* <input required placeholder="Dog Name" type="text"></input>
           <br />
 
           <input required placeholder="Toy Name" type="text"></input>
-          <br />
+          <br /> */}
+
+          {/* the name that is passed with the form data is the name of the select tag 
+          and the value is the value of the option chosen.*/}
 
           <label htmlFor="activity">Activity:</label>
-          <select id="activity" name="activity">
+          <select
+            value={activity}
+            onChange={(event) => setActivity(event.target.value)}
+            id="activity"
+            name="activity"
+          >
+            <option value="">Select </option>
             <option value="chew">Chew</option>
             <option value="cuddle">Cuddle</option>
             <option value="fetch">Fetch</option>
@@ -55,7 +67,7 @@ function AddToy() {
             <option value="tug">Tug</option>
           </select>
           <br />
-
+          {/* 
           <label htmlFor="texture">Toy Texture:</label>
           <select id="texture" name="texture">
             <option value="hard">Hard</option>
@@ -91,14 +103,9 @@ function AddToy() {
           <br />
 
           <input placeholder="Comments" type="text"></input>
-          <br />
+          <br /> */}
 
-          <button
-            type="button"
-            onClick={() => {
-              history.push("/user");
-            }}
-          >
+          <button type="submit" onClick={handleSubmit}>
             Submit
           </button>
         </form>
