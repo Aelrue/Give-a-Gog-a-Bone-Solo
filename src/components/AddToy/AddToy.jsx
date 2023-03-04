@@ -7,13 +7,27 @@ function AddToy() {
   const history = useHistory();
   const dispatch = useDispatch();
   const [activity, setActivity] = useState("");
+  const [texture, setTexture] = useState("");
+  const [features, setFeatures] = useState("");
+  const [dog_size, setDogSize] = useState("");
+  const [dog_name, setDogName] = useState("");
+  const [toy_name, setToyName] = useState("");
+  const [brand_name, setBrandName] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("in handlesubmit", activity);
+    console.log("in handlesubmit", features);
     dispatch({
       type: "ADD_TOY",
-      payload: { activity },
+      payload: {
+        dog_name,
+        toy_name,
+        brand_name,
+        activity,
+        texture,
+        features,
+        dog_size,
+      },
     });
   };
 
@@ -43,14 +57,32 @@ function AddToy() {
         <p>Add a new toy to your account by following the prompts below!</p>
 
         <form>
-          {/* <input required placeholder="Dog Name" type="text"></input>
+          <input
+            required
+            placeholder="Dog Name"
+            type="text"
+            value={dog_name || ""}
+            onChange={(event) => setDogName(event.target.value)}
+          ></input>
           <br />
 
-          <input required placeholder="Toy Name" type="text"></input>
-          <br /> */}
+          <input
+            required
+            placeholder="Toy Name"
+            type="text"
+            value={toy_name || ""}
+            onChange={(event) => setToyName(event.target.value)}
+          ></input>
+          <br />
 
-          {/* the name that is passed with the form data is the name of the select tag 
-          and the value is the value of the option chosen.*/}
+          <input
+            required
+            placeholder="Brand Name"
+            type="text"
+            value={brand_name || ""}
+            onChange={(event) => setBrandName(event.target.value)}
+          ></input>
+          <br />
 
           <label htmlFor="activity">Activity:</label>
           <select
@@ -67,19 +99,31 @@ function AddToy() {
             <option value="tug">Tug</option>
           </select>
           <br />
-          {/* 
-          <label htmlFor="texture">Toy Texture:</label>
-          <select id="texture" name="texture">
+
+          <label htmlFor="texture">Texture:</label>
+          <select
+            value={texture}
+            onChange={(event) => setTexture(event.target.value)}
+            id="texture"
+            name="texture"
+          >
+            <option value="">Select </option>
             <option value="hard">Hard</option>
-            <option value="rubbery">Rubbery</option>
             <option value="soft">Soft</option>
+            <option value="rubbery">Rubbery</option>
           </select>
           <br />
 
           <label htmlFor="features">Features:</label>
-          <select id="features" name="features">
+          <select
+            value={features}
+            onChange={(event) => setFeatures(event.target.value)}
+            id="features"
+            name="features"
+          >
+            <option value="">Select</option>
             <option value="xtough">Extra Tough</option>
-            <option value="small">Fillable/Edible Parts</option>
+            <option value="fillable_edible">Fillable/Edible Parts</option>
             <option value="light_up">Light Up</option>
             <option value="no_stuffing">No Stuffing</option>
             <option value="no_squeaker">No Squeaker</option>
@@ -90,7 +134,13 @@ function AddToy() {
           <br />
 
           <label htmlFor="dog_size">Dog Size:</label>
-          <select id="dog_size" name="dog_size">
+          <select
+            value={dog_size}
+            onChange={(event) => setDogSize(event.target.value)}
+            id="dog_size"
+            name="dog_size"
+          >
+            <option value="">Select</option>
             <option value="mini">Mini</option>
             <option value="small">Small</option>
             <option value="medium">Medium</option>
@@ -99,7 +149,7 @@ function AddToy() {
           </select>
           <br />
 
-          <input placeholder="Purchase Link" type="text"></input>
+          {/* <input placeholder="Purchase Link" type="text"></input>
           <br />
 
           <input placeholder="Comments" type="text"></input>
