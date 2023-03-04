@@ -2,7 +2,7 @@ import axios from "axios";
 import { put, takeLatest } from "redux-saga/effects";
 
 // worker Saga: will be fired on "FETCH_USER" actions
-function* addToy() {
+function* addToy(action) {
   console.log("here in the addToy saga", action.payload);
   // try {
   // const config = {

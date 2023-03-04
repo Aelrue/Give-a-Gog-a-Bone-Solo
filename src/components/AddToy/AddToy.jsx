@@ -13,7 +13,7 @@ function AddToy() {
     console.log("in handlesubmit", activity);
     dispatch({
       type: "ADD_TOY",
-      payload: [dispatch],
+      payload: { activity },
     });
   };
 
