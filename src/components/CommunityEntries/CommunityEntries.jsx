@@ -6,9 +6,9 @@ function CommunityEntries() {
 
   const toys = useSelector((store) => store.toys);
 
-  useEffect(() => {
-    dispatch({ type: "FETCH_TOY" });
-  }, [dispatch]);
+  // useEffect(() => {
+  //   dispatch({ type: "FETCH_TOY" });
+  // }, [dispatch]);
 
   return (
     <div className="container">

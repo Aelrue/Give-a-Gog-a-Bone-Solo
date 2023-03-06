@@ -13,6 +13,8 @@ function AddToy() {
   const [dog_name, setDogName] = useState("");
   const [toy_name, setToyName] = useState("");
   const [brand_name, setBrandName] = useState("");
+  const [comment, setComment] = useState("");
+  const [link, setLink] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -27,8 +29,11 @@ function AddToy() {
         texture,
         features,
         dog_size,
+        comment,
+        link,
       },
     });
+    history.push("/toyview");
   };
 
   return (
@@ -148,12 +153,22 @@ function AddToy() {
             <option value="xlarge">Extra Large</option>
           </select>
           <br />
-          {/* 
-          <input placeholder="Purchase Link" type="text"></input>
+
+          <input
+            placeholder="Comments"
+            type="text"
+            value={comment || ""}
+            onChange={(event) => setComment(event.target.value)}
+          ></input>
           <br />
 
-          <input placeholder="Comments" type="text"></input>
-          <br /> */}
+          <input
+            placeholder="Purchase Link"
+            type="text"
+            value={link || ""}
+            onChange={(event) => setLink(event.target.value)}
+          ></input>
+          <br />
 
           <button type="submit" onClick={handleSubmit}>
             Submit

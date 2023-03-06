@@ -59,16 +59,4 @@ router.post("/", (req, res) => {
     });
 });
 
-//   pool
-//     .query(insertToyQuery, queryParams)
-//     .then(() => {
-//       console.log("result from post", result.rows);
-//       res.sendStatus(201);
-//     })
-//     .catch((error) => {
-//       console.log("add toy failed: ", error);
-//       res.sendStatus(500);
-//     });
-// });
-
 module.exports = router;
