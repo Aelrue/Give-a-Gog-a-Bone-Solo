@@ -4,7 +4,11 @@ import { put, takeLatest } from "redux-saga/effects";
 function* addToy(action) {
   console.log("here in the addToy saga", action.payload);
   try {
-    const response = yield axios.get("/api/toyview");
+    const config = {
+      headers: { "Content-Type": "application/json" },
+      withCredentials: true,
+    };
+    const response = yield axios.get("/api/toyview", config);
     yield axios.post("/api/addtoy", action.payload);
     yield put({ type: "SET_TOYS", payload: response.data });
   } catch (error) {

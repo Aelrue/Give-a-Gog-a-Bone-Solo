@@ -19,10 +19,9 @@ router.post("/", (req, res) => {
   // "activity","texture", "features", "dog_size","link", "comment") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)`;
 
   const insertToyQuery = `INSERT INTO "toy" ("dog_name", "toy_name", "brand_name",   
-  "activity","texture", "features", "dog_size","link", "comment") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"`;
+  "activity","texture", "features", "dog_size","link", "comment", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"`;
 
   const queryParams = [
-    // req.user.id,
     // req.body.toy_id,
     req.body.dog_name,
     req.body.toy_name,
@@ -33,6 +32,7 @@ router.post("/", (req, res) => {
     req.body.dog_size,
     req.body.link,
     req.body.comment,
+    req.user.id,
   ];
 
   console.log("in router.post", req.user);
