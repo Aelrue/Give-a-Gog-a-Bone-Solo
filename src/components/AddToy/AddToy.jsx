@@ -16,7 +16,7 @@ function AddToy() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log("in handlesubmit", features);
+    // console.log("in handlesubmit", features);
     dispatch({
       type: "ADD_TOY",
       payload: {
@@ -148,8 +148,8 @@ function AddToy() {
             <option value="xlarge">Extra Large</option>
           </select>
           <br />
-
-          {/* <input placeholder="Purchase Link" type="text"></input>
+          {/* 
+          <input placeholder="Purchase Link" type="text"></input>
           <br />
 
           <input placeholder="Comments" type="text"></input>
