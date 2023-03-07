@@ -24,7 +24,14 @@ function* addToy(action) {
 function* deleteToy(action) {
   console.log(action.payload);
   try {
-    const toyToDelete = yield axios.delete(`/api/toyview/${action.payload}`);
+    const config = {
+      headers: { "Content-Type": "application/json" },
+      withCredentials: true,
+    };
+    const toyToDelete = yield axios.delete(
+      `/api/toyview/${action.payload}`,
+      config
+    );
     console.log("DELETE_TOY", toyToDelete.data);
   } catch (error) {
     console.log("Error deleting toy", error);

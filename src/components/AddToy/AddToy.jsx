@@ -16,9 +16,7 @@ function AddToy() {
   const [comment, setComment] = useState("");
   const [link, setLink] = useState("");
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // console.log("in handlesubmit", features);
+  const handleSubmit = () => {
     dispatch({
       type: "ADD_TOY",
       payload: {

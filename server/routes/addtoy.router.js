@@ -2,21 +2,8 @@ const express = require("express");
 const pool = require("../modules/pool");
 const router = express.Router();
 
-/**
- * GET route template
- */
-// router.get("/", (req, res) => {
-//   // GET route code here
-// });
-
-/**
- * POST route template
- */
 router.post("/", (req, res) => {
   console.log("in addtoy post router", req.body);
-
-  // const insertToyQuery = `INSERT INTO "toy" ( "user_id", "toy_id", "dog_name", "toy_name", "brand_name",
-  // "activity","texture", "features", "dog_size","link", "comment") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)`;
 
   const insertToyQuery = `INSERT INTO "toy" ("dog_name", "toy_name", "brand_name",   
   "activity","texture", "features", "dog_size","link", "comment", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"`;

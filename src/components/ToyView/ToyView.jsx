@@ -4,10 +4,8 @@ import { useParams, useHistory } from "react-router-dom";
 import "./ToyView.css";
 
 function ToyView() {
-  const history = useHistory();
   const dispatch = useDispatch();
   const toys = useSelector((store) => store.toys);
-  const id = useParams();
 
   useEffect(() => {
     dispatch({ type: "FETCH_TOY" });
