@@ -91,66 +91,70 @@ function AddToy() {
 
           <label htmlFor="activity">Activity:</label>
           <select
-            value={activity}
+            defaultValue="Select"
+            // value={activity}
             onChange={(event) => setActivity(event.target.value)}
             id="activity"
             name="activity"
           >
-            <option value="">Select </option>
-            <option value="chew">Chew</option>
-            <option value="cuddle">Cuddle</option>
-            <option value="fetch">Fetch</option>
-            <option value="puzzle">Puzzle</option>
-            <option value="tug">Tug</option>
+            <option disabled>Select</option>
+            <option value="Chew">Chew</option>
+            <option value="Cuddle">Cuddle</option>
+            <option value="Fetch">Fetch</option>
+            <option value="Puzzle">Puzzle</option>
+            <option value="Tug">Tug</option>
           </select>
           <br />
 
           <label htmlFor="texture">Texture:</label>
           <select
-            value={texture}
+            // value={texture}
+            defaultValue="Select"
             onChange={(event) => setTexture(event.target.value)}
             id="texture"
             name="texture"
           >
-            <option value="">Select </option>
-            <option value="hard">Hard</option>
-            <option value="soft">Soft</option>
-            <option value="rubbery">Rubbery</option>
+            <option disabled>Select </option>
+            <option value="Hard">Hard</option>
+            <option value="Soft">Soft</option>
+            <option value="Rubbery">Rubbery</option>
           </select>
           <br />
 
           <label htmlFor="features">Features:</label>
           <select
-            value={features}
+            // value={features}
+            defaultValue="Select"
             onChange={(event) => setFeatures(event.target.value)}
             id="features"
             name="features"
           >
-            <option value="">Select</option>
-            <option value="xtough">Extra Tough</option>
-            <option value="fillable_edible">Fillable/Edible Parts</option>
-            <option value="light_up">Light Up</option>
-            <option value="no_stuffing">No Stuffing</option>
-            <option value="no_squeaker">No Squeaker</option>
-            <option value="scented_flavored">Scented/Flavored</option>
-            <option value="squeaker">Squeaker</option>
-            <option value="stuffing">Stuffing</option>
+            <option disabled>Select</option>
+            <option value="Extra Tough">Extra Tough</option>
+            <option value="Fillable/Edible Parts">Fillable/Edible Parts</option>
+            <option value="Light Up">Light Up</option>
+            <option value="No Stuffing">No Stuffing</option>
+            <option value="No Squeaker">No Squeaker</option>
+            <option value="Scented/Flavored">Scented/Flavored</option>
+            <option value="Squeaker">Squeaker</option>
+            <option value="Stuffing">Stuffing</option>
           </select>
           <br />
 
           <label htmlFor="dog_size">Dog Size:</label>
           <select
-            value={dog_size}
+            // value={dog_size}
+            defaultValue="Select"
             onChange={(event) => setDogSize(event.target.value)}
             id="dog_size"
             name="dog_size"
           >
-            <option value="">Select</option>
-            <option value="mini">Mini</option>
-            <option value="small">Small</option>
-            <option value="medium">Medium</option>
-            <option value="large">Large</option>
-            <option value="xlarge">Extra Large</option>
+            <option disabled>Select</option>
+            <option value="Mini">Mini</option>
+            <option value="Small">Small</option>
+            <option value="Medium">Medium</option>
+            <option value="Large">Large</option>
+            <option value="Extra Large">Extra Large</option>
           </select>
           <br />
 

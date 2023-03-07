@@ -11,6 +11,7 @@ function* addToy(action) {
     const response = yield axios.get("/api/toyview", config);
     yield axios.post("/api/addtoy", action.payload);
     yield put({ type: "SET_TOYS", payload: response.data });
+    window.location.reload();
   } catch (error) {
     console.log("User get request failed", error);
   }
