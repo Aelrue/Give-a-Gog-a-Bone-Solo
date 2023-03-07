@@ -1,15 +1,24 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { useParams, useHistory } from "react-router-dom";
 import "./ToyView.css";
 
 function ToyView() {
+  const history = useHistory();
   const dispatch = useDispatch();
-
   const toys = useSelector((store) => store.toys);
+  const id = useParams();
 
   useEffect(() => {
     dispatch({ type: "FETCH_TOY" });
   }, []);
+
+  const deleteToy = (clickedId) => {
+    dispatch({
+      type: "DELETE_TOY",
+      payload: clickedId,
+    });
+  };
 
   return (
     <main>
@@ -26,6 +35,7 @@ function ToyView() {
             <p>Dog Size: {toy.dog_size}</p>
             <p>Comments: {toy.comment}</p>
             <p>Purchase Link: {toy.link}</p>
+            <button onClick={(e) => deleteToy(toy.id)}>Delete Toy</button>
           </div>
         );
       })}

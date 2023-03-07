@@ -28,4 +28,21 @@ router.post("/", (req, res) => {
   // POST route code here
 });
 
+router.delete("/:id", (req, res) => {
+  if (req.isAuthenticated()) {
+    let id = req.params.id;
+    const queryText = `DELETE FROM "toy" WHERE "id" = $1;`;
+    pool
+      .query(queryText, [id])
+      .then((result) => {
+        res.sendStatus(204);
+      })
+      .catch((error) => {
+        res.sendStatus(500);
+      });
+  } else {
+    res.sendStatus(403);
+  }
+});
+
 module.exports = router;
