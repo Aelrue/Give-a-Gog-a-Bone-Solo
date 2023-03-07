@@ -18,6 +18,13 @@ function ToyView() {
     });
   };
 
+  const favoriteToy = (clickedId) => {
+    dispatch({
+      type: "UPDATE_TOY",
+      payload: clickedId,
+    });
+  };
+
   return (
     <main>
       <h1>Added Toys</h1>
@@ -34,6 +41,7 @@ function ToyView() {
             <p>Comments: {toy.comment}</p>
             <p>Purchase Link: {toy.link}</p>
             <button onClick={(e) => deleteToy(toy.id)}>Delete Toy</button>
+            <button onClick={(e) => favoriteToy(toy.id)}>--</button>
           </div>
         );
       })}

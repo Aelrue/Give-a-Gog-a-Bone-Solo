@@ -34,4 +34,21 @@ router.delete("/:id", (req, res) => {
   }
 });
 
+router.put("/:id", (req, res) => {
+  if (req.isAuthenticated()) {
+    let id = req.params.id;
+    const queryText = `UPDATE "toy" SET "isFavorited" = true WHERE "id" =$1; `;
+    pool
+      .query(queryText, [id])
+      .then((result) => {
+        res.sendStatus(204);
+      })
+      .catch((error) => {
+        res.sendStatus(500);
+      });
+  } else {
+    res.sendStatus(403);
+  }
+});
+
 module.exports = router;
