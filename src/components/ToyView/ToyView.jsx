@@ -6,6 +6,7 @@ import "./ToyView.css";
 function ToyView() {
   const dispatch = useDispatch();
   const toys = useSelector((store) => store.toys);
+  // const { id } = useParams();
 
   useEffect(() => {
     dispatch({ type: "FETCH_TOY" });
@@ -16,12 +17,34 @@ function ToyView() {
       type: "DELETE_TOY",
       payload: clickedId,
     });
+    dispatch({
+      type: "FETCH_TOY",
+      // payload: id,
+    });
   };
 
   const favoriteToy = (clickedId) => {
+    console.log("favoriteToy dispatch", clickedId);
     dispatch({
-      type: "UPDATE_TOY",
+      type: "FAVORITE_TOY",
       payload: clickedId,
+      favorite: true,
+    });
+    dispatch({
+      type: "FETCH_TOY",
+      // payload: id,
+    });
+  };
+
+  const unfavoriteToy = (clickedId) => {
+    dispatch({
+      type: "UNFAVORITE_TOY",
+      payload: clickedId,
+      favorite: false,
+    });
+    dispatch({
+      type: "FETCH_TOY",
+      // payload: id,
     });
   };
 
@@ -41,7 +64,12 @@ function ToyView() {
             <p>Comments: {toy.comment}</p>
             <p>Purchase Link: {toy.link}</p>
             <button onClick={(e) => deleteToy(toy.id)}>Delete Toy</button>
-            <button onClick={(e) => favoriteToy(toy.id)}>--</button>
+            {toy.favorite == true && (
+              <button onClick={(e) => unfavoriteToy(toy.id)}>Unfavorite</button>
+            )}
+            {toy.favorite == false && (
+              <button onClick={(e) => favoriteToy(toy.id)}>Favorite</button>
+            )}
           </div>
         );
       })}

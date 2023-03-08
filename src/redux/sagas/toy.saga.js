@@ -5,7 +5,8 @@ function* toySaga() {
   yield takeLatest("FETCH_TOY", fetchToy);
   yield takeLatest("ADD_TOY", addToy);
   yield takeEvery("DELETE_TOY", deleteToy);
-  yield takeEvery("UPDATE_TOY", editToy);
+  yield takeEvery("FAVORITE_TOY", favoriteToy);
+  // yield takeEvery("UNFAVORITE_TOY", favoriteToy);
 }
 
 function* fetchToy() {
@@ -54,18 +55,41 @@ function* deleteToy(action) {
   }
 }
 
-function* editToy(action) {
-  console.log(action.payload);
+function* favoriteToy(action) {
   try {
     const config = {
       headers: { "Content-Type": "application/json" },
       withCredentials: true,
     };
-    const toyToEdit = yield axios.put(`/api/toyview/${action.payload}`, config);
-    console.log("UPDATE_TOY", toyToEdit.data);
+    console.log("Favorite toy in toy saga", action.payload);
+    const toyToFavorite = yield axios.put(
+      `/api/toyview/${action.payload}`,
+      config
+    );
+    console.log("FAVORITE_TOY", toyToFavorite.data);
   } catch (error) {
-    console.log("Error editing toy", error);
+    console.log("Error favoriting toy", error);
   }
 }
+
+// function* favoriteToy(action) {
+//   console.log(action.payload);
+//   try {
+//     const config = {
+//       headers: { "Content-Type": "application/json" },
+//       withCredentials: true,
+//     };
+//     if (action.type === "FAVORITE_TOY") {
+//       console.log("FAVORITE_TOY in favorite saga", action.payload);
+//       yield axios.put(`/api/favorite`, action.payload);}
+//     // } else if (action.type === "UNFAVORITE_TOY") {
+//     //   console.log("UNFAVORITE_TOY in favorite saga", action.payload);
+//     //   yield axios.put(`/api/favorite`, action.payload);
+//     // }
+//     yield fetchToy({ type: "FETCH_TOY", payload: `${action.payload.id}` });
+//   } catch (error) {
+//     console.log("Error favoriting/unfavoriting:", error);
+//   }
+// }
 
 export default toySaga;

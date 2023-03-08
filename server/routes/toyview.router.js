@@ -35,15 +35,19 @@ router.delete("/:id", (req, res) => {
 });
 
 router.put("/:id", (req, res) => {
+  console.log("PUT favorite");
   if (req.isAuthenticated()) {
     let id = req.params.id;
-    const queryText = `UPDATE "toy" SET "isFavorited" = true WHERE "id" =$1; `;
+    const queryText = `UPDATE "toy" SET "favorite" = true WHERE "id" = $1 `;
     pool
+      // .query(queryText, [id, favoriteClicked])
       .query(queryText, [id])
       .then((result) => {
+        console.log("PUT favorite result: ", result);
         res.sendStatus(204);
       })
       .catch((error) => {
+        console.log("PUT favorite error", error);
         res.sendStatus(500);
       });
   } else {
