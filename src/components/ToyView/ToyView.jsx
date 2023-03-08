@@ -1,11 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useParams, useHistory } from "react-router-dom";
+// import { useParams, useHistory } from "react-router-dom";
 import "./ToyView.css";
+// import PetsIcon from "@mui/icons-material/Pets";
+// import PetsOutlinedIcon from "@mui/icons-material/PetsOutlined";
+// import FavoriteTwoToneIcon from "@mui/icons-material/FavoriteTwoTone";
+// import FavoriteBorderTwoToneIcon from "@mui/icons-material/FavoriteBorderTwoTone";
 
 function ToyView() {
   const dispatch = useDispatch();
   const toys = useSelector((store) => store.toys);
+  // const [favorite, setFavorite] = useState(false);
   // const { id } = useParams();
 
   useEffect(() => {
@@ -30,10 +35,10 @@ function ToyView() {
       payload: clickedId,
       favorite: true,
     });
-    dispatch({
-      type: "FETCH_TOY",
-      // payload: id,
-    });
+    // dispatch({
+    //   type: "FETCH_TOY",
+    // payload: id,
+    // });
   };
 
   const unfavoriteToy = (clickedId) => {
@@ -42,10 +47,10 @@ function ToyView() {
       payload: clickedId,
       favorite: false,
     });
-    dispatch({
-      type: "FETCH_TOY",
-      // payload: id,
-    });
+    // dispatch({
+    // type: "FETCH_TOY",
+    // payload: id,
+    // });
   };
 
   return (
@@ -63,12 +68,17 @@ function ToyView() {
             <p>Dog Size: {toy.dog_size}</p>
             <p>Comments: {toy.comment}</p>
             <p>Purchase Link: {toy.link}</p>
+
+            {/* <FavoriteTwoToneIcon />
+            <FavoriteBorderTwoToneIcon /> */}
+
             <button onClick={(e) => deleteToy(toy.id)}>Delete Toy</button>
-            {toy.favorite == true && (
-              <button onClick={(e) => unfavoriteToy(toy.id)}>Unfavorite</button>
+
+            {toy.favorite === true && (
+              <button onClick={(e) => unfavoriteToy(toy.id)}>UNFAVORITE</button>
             )}
-            {toy.favorite == false && (
-              <button onClick={(e) => favoriteToy(toy.id)}>Favorite</button>
+            {toy.favorite === false && (
+              <button onClick={(e) => favoriteToy(toy.id)}>FAVORITE</button>
             )}
           </div>
         );
