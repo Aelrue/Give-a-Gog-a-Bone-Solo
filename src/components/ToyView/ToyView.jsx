@@ -27,7 +27,7 @@ function ToyView() {
   };
 
   const favoriteToy = (clickedId) => {
-    console.log("favoriteToy dispatch", clickedId);
+    // console.log("favoriteToy dispatch", clickedId);
     dispatch({
       type: "FAVORITE_TOY",
       payload: { clickedId, favorite: true },
