@@ -55,15 +55,15 @@ router.delete("/:id", (req, res) => {
 //       });
 //   }
 // });
-router.put("/:id", (req, res) => {
-  console.log("PUT favorite", req.body.favorite);
+
+router.put("/", (req, res) => {
+  console.log("PUT favorite", req.body);
   if (req.isAuthenticated()) {
-    let id = req.params.id;
+    let id = req.body.clickedId;
     let favoriteStatus = req.body.favorite;
     const queryText = `UPDATE "toy" SET "favorite" = $2 WHERE "id" = $1 `;
 
     pool
-      // .query(queryText, [id, favoriteClicked])
       .query(queryText, [id, favoriteStatus])
       .then((result) => {
         console.log("PUT favorite result: ", result);

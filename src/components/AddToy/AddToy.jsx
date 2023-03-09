@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
 import "./AddToy.css";
+import "./AddToyToastify.css";
 
 function AddToy() {
   const history = useHistory();
@@ -15,6 +17,12 @@ function AddToy() {
   const [brand_name, setBrandName] = useState("");
   const [comment, setComment] = useState("");
   const [link, setLink] = useState("");
+
+  // function addToyAlert() {
+  //   const notify = () => {
+  //     toast.success("Toy Added to Account Successfully!");
+  //   };
+  // }
 
   const handleSubmit = () => {
     dispatch({
@@ -90,7 +98,6 @@ function AddToy() {
           <label htmlFor="activity">Activity:</label>
           <select
             defaultValue="Select"
-            // value={activity}
             onChange={(event) => setActivity(event.target.value)}
             id="activity"
             name="activity"
@@ -106,7 +113,6 @@ function AddToy() {
 
           <label htmlFor="texture">Texture:</label>
           <select
-            // value={texture}
             defaultValue="Select"
             onChange={(event) => setTexture(event.target.value)}
             id="texture"
@@ -121,7 +127,6 @@ function AddToy() {
 
           <label htmlFor="features">Features:</label>
           <select
-            // value={features}
             defaultValue="Select"
             onChange={(event) => setFeatures(event.target.value)}
             id="features"

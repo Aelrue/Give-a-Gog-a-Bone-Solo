@@ -75,11 +75,12 @@ function* deleteToy(action) {
 function* favoriteToy(action) {
   try {
     if (action.type === "FAVORITE_TOY") {
-      // console.log("favoriteToy saga favorite payload:", action.payload);
-      yield axios.put(`/api/toyview/${action.payload}`, action.payload);
+      console.log("favoriteToy saga favorite payload:", action.payload);
+      yield axios.put(`/api/toyview`, action.payload);
     } else if (action.type === "UNFAVORITE_TOY") {
-      // console.log("favoriteToy saga unfavorite payload:", action.payload);
-      yield axios.put(`/api/toyview/${action.payload}`, action.payload);
+      console.log("favoriteToy saga unfavorite payload:", action.payload);
+
+      yield axios.put(`/api/toyview`, action.payload);
     }
     yield fetchToy({ type: "FETCH_TOY", payload: `${action.payload.id}` });
   } catch (error) {
