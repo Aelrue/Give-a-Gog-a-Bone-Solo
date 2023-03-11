@@ -1,5 +1,6 @@
 import axios from "axios";
 import { put, takeEvery, takeLatest } from "redux-saga/effects";
+import CommunityEntries from "../../components/CommunityEntries/CommunityEntries";
 
 function* toySaga() {
   yield takeLatest("FETCH_TOY", fetchToy);
@@ -7,6 +8,7 @@ function* toySaga() {
   yield takeEvery("DELETE_TOY", deleteToy);
   yield takeEvery("FAVORITE_TOY", favoriteToy);
   yield takeEvery("UNFAVORITE_TOY", favoriteToy);
+  yield takeEvery("FETCH_ALL", fetchAllToys);
 }
 
 function* fetchToy() {
@@ -20,6 +22,21 @@ function* fetchToy() {
     yield put({ type: "SET_TOYS", payload: response.data });
   } catch (error) {
     console.log("User get request failed", error);
+  }
+}
+
+function* fetchAllToys() {
+  console.log("here in fetchAllToys saga");
+  try {
+    const config = {
+      headers: { "Content-Type": "application/json" },
+      withCredentials: true,
+    };
+    const response = yield axios.get("/api/communityentries", config);
+    console.log("get all", response.data);
+    yield put({ type: "SET_TOYS", payload: response.data });
+  } catch (error) {
+    console.log("Get all request failed", error);
   }
 }
 

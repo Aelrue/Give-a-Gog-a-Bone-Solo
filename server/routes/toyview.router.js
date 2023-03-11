@@ -17,6 +17,22 @@ router.get("/", (req, res) => {
     });
 });
 
+router.get("/communityentries", (req, res) => {
+  console.log("in the server GET toys");
+  let queryText = `SELECT * FROM "toy"
+JOIN "user_toy" ON "toy"."id"="user_toy"."toy_id";`;
+  pool
+    .query(queryText)
+    .then((result) => {
+      console.log(result.rows);
+      res.send(result.rows);
+    })
+    .catch((error) => {
+      console.log("error with toy get", error);
+      res.sendStatus(500);
+    });
+});
+
 router.delete("/:id", (req, res) => {
   if (req.isAuthenticated()) {
     let id = req.params.id;
