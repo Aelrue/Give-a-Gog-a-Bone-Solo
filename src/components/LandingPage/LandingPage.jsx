@@ -3,20 +3,22 @@ import { useHistory } from "react-router-dom";
 import "./LandingPage.css";
 
 // CUSTOM COMPONENTS
-import RegisterForm from "../RegisterForm/RegisterForm";
+// import RegisterForm from "../RegisterForm/RegisterForm";
 
 function LandingPage() {
-  const [heading, setHeading] = useState("Welcome");
-  const history = useHistory();
+  // const [heading, setHeading] = useState("Welcome");
+  // const history = useHistory();
 
-  const onLogin = (event) => {
-    history.push("/login");
-  };
+  // const onLogin = (event) => {
+  //   history.push("/login");
+  // };
 
   return (
     <div className="container">
-      <h2>{heading}</h2>
+      <div id="imageContainer"></div>
+      {/* <h2>{heading}</h2> */}
 
+      {/* <h1>Give a Dog a Bone</h1>
       <div className="grid">
         <div className="grid-col grid-col_8">
           <p>
@@ -35,7 +37,7 @@ function LandingPage() {
             </button>
           </center>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

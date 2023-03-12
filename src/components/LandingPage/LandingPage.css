@@ -1,14 +1,52 @@
+/* .container {
+  background-image: url("https://images.pexels.com/photos/1562983/pexels-photo-1562983.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+  width: 100%;
+  height: 93vh;
+  margin: -30px 0px 0px 0px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+} */
+
+/* .container {
+} */
+
+#imageContainer {
+  content: "";
+  width: 100%;
+  height: 200%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translateZ(0);
+  backface-visibility: hidden;
+  scale: (1, 1);
+  transform: translateZ(0);
+  background: url("https://images.pexels.com/photos/1562983/pexels-photo-1562983.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
+    50% 0 no-repeat;
+  background-size: 100%;
+  background-attachment: fixed;
+  animation: grow 360s linear 10ms infinite;
+  transition: all 0.4s ease-in-out;
+  z-index: -2;
+}
+
+/* .h1 {
+  width: 100%;
+  padding: 15% 10% 0 10%;
+  text-align: center;
+  text-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+} */
 /* --------------------------------------------------------------------------------
 Grid
 -------------------------------------------------------------------------------- */
 
-.grid {
+/* .grid {
   display: flex;
   flex: 0 1 auto;
-  /* defaults to 'row' */
   flex-direction: row;
   flex-wrap: wrap;
-  /* defaults to 'flex-start' */
   justify-content: flex-start;
   align-items: flex-start;
 }
@@ -77,4 +115,4 @@ Grid
 .grid-col_12 {
   flex-basis: 100%;
   max-width: 100%;
-}
+} */
