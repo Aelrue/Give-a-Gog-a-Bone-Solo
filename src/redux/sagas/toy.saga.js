@@ -33,7 +33,7 @@ function* fetchAllToys() {
       headers: { "Content-Type": "application/json" },
       withCredentials: true,
     };
-    const response = yield axios.get("/api/communityentries", config);
+    const response = yield axios.get("/api/toyview/communityentries", config);
     console.log("get all", response.data);
     yield put({ type: "SET_TOYS", payload: response.data });
   } catch (error) {
