@@ -8,7 +8,7 @@ function* toySaga() {
   yield takeEvery("DELETE_TOY", deleteToy);
   yield takeEvery("FAVORITE_TOY", favoriteToy);
   yield takeEvery("UNFAVORITE_TOY", favoriteToy);
-  yield takeEvery("FETCH_ALL", fetchAllToys);
+  yield takeLatest("FETCH_ALL", fetchAllToys);
 }
 
 function* fetchToy() {
@@ -18,6 +18,7 @@ function* fetchToy() {
       headers: { "Content-Type": "application/json" },
       withCredentials: true,
     };
+
     const response = yield axios.get("/api/toyview", config);
     yield put({ type: "SET_TOYS", payload: response.data });
   } catch (error) {
