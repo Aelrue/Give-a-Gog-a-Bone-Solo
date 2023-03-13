@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import "./ToyView.css";
 import { toast } from "react-toastify";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import { faPaw } from "@fortawesome/free-regular-svg-icons";
 // import PetsIcon from "@mui/icons-material/Pets";
 // import PetsOutlinedIcon from "@mui/icons-material/PetsOutlined";
 // import FavoriteTwoToneIcon from "@mui/icons-material/FavoriteTwoTone";
@@ -38,6 +41,10 @@ function ToyView() {
     // });
   };
 
+  const pawIcon = <FontAwesomeIcon icon={faPaw} />;
+
+  const heartIcon = <FontAwesomeIcon icon={faHeart} />;
+
   const unfavoriteToy = (clickedId) => {
     dispatch({
       type: "UNFAVORITE_TOY",
@@ -55,6 +62,17 @@ function ToyView() {
       {toys.map((toy) => {
         return (
           <div className="toys" key={toy.id}>
+            <>
+              {toy.favorite == true ? (
+                <FontAwesomeIcon onClick={(e) => unfavoriteToy(toy.id)}>
+                  <FontAwesomeIcon icon="fa-paw" />
+                </FontAwesomeIcon>
+              ) : (
+                <FontAwesomeIcon onClick={(e) => favoriteToy(toy.id)}>
+                  <FontAwesomeIcon icon="fa-heart" />
+                </FontAwesomeIcon>
+              )}
+            </>
             <h3>Toy Name: {toy.toy_name}</h3>
             <img src={toy.image_url}></img>
             <p>Dog Name: {toy.dog_name}</p>
@@ -68,12 +86,6 @@ function ToyView() {
             {/* <FavoriteTwoToneIcon />
             <FavoriteBorderTwoToneIcon /> */}
             <button onClick={(e) => deleteToy(toy.id)}>Delete Toy</button>
-            {/* {toy.favorite === true && ( */}
-            <button onClick={(e) => unfavoriteToy(toy.id)}>UNFAVORITE</button>
-            {/* )} */}
-            {/* {toy.favorite === false && ( */}
-            <button onClick={(e) => favoriteToy(toy.id)}>FAVORITE</button>
-            {/* )} */}
           </div>
         );
       })}

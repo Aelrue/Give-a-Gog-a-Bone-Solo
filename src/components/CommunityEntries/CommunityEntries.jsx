@@ -17,7 +17,7 @@ function CommunityEntries() {
         return (
           <div className="toys" key={toy.id}>
             <h3>Toy Name: {toy.toy_name}</h3>
-            <p>{toy.image_url}</p>
+            <img src={toy.image_url}></img>
             <p>Dog Name: {toy.dog_name}</p>
             <p>Brand Name: {toy.brand_name}</p>
             <p>Activity: {toy.activity}</p>
