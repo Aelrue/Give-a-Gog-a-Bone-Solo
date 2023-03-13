@@ -3,12 +3,13 @@ import { useDispatch, useSelector } from "react-redux";
 import "./ToyView.css";
 import { toast } from "react-toastify";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
-import { faPaw } from "@fortawesome/free-regular-svg-icons";
+import { faHeart, faPaw } from "@fortawesome/free-solid-svg-icons";
 // import PetsIcon from "@mui/icons-material/Pets";
 // import PetsOutlinedIcon from "@mui/icons-material/PetsOutlined";
+import IconButton from "@mui/material/IconButton";
 // import FavoriteTwoToneIcon from "@mui/icons-material/FavoriteTwoTone";
 // import FavoriteBorderTwoToneIcon from "@mui/icons-material/FavoriteBorderTwoTone";
+// import { pink } from "@mui/material/colors";
 
 function ToyView() {
   const dispatch = useDispatch();
@@ -41,10 +42,6 @@ function ToyView() {
     // });
   };
 
-  const pawIcon = <FontAwesomeIcon icon={faPaw} />;
-
-  const heartIcon = <FontAwesomeIcon icon={faHeart} />;
-
   const unfavoriteToy = (clickedId) => {
     dispatch({
       type: "UNFAVORITE_TOY",
@@ -63,15 +60,37 @@ function ToyView() {
         return (
           <div className="toys" key={toy.id}>
             <>
+              {/* <i class="fa-regular fa-heart fa-2x"></i>;
+              <span class="fa-stack" style={{vertical-align: top
+              }}>
+                <i class="fa-regular fa-heart fa-stack-2x"></i>
+                <i class="fa-solid fa-paw fa-stack-1x"></i>
+              </span>
+              {/* ; */}
+              {/* <span class="fa-stack" style="vertical-align: top;">
+                <i class="fa-solid fa-circle fa-stack-2x"></i>
+                <i class="fa-solid fa-flag fa-stack-1x fa-inverse"></i>
+              </span>
+              <i class="fa-regular fa-circle fa-2x"></i> */}
+
               {toy.favorite == true ? (
-                <FontAwesomeIcon onClick={(e) => unfavoriteToy(toy.id)}>
-                  <FontAwesomeIcon icon="fa-paw" />
-                </FontAwesomeIcon>
+                <IconButton onClick={(e) => unfavoriteToy(toy.id)}>
+                  <FontAwesomeIcon icon={faHeart} />
+                </IconButton>
               ) : (
-                <FontAwesomeIcon onClick={(e) => favoriteToy(toy.id)}>
-                  <FontAwesomeIcon icon="fa-heart" />
-                </FontAwesomeIcon>
+                <IconButton onClick={(e) => favoriteToy(toy.id)}>
+                  <FontAwesomeIcon icon={faPaw} color="mediumvioletred" />
+                </IconButton>
               )}
+              {/* {toy.favorite == true ? (
+                <IconButton onClick={(e) => unfavoriteToy(toy.id)}>
+                  <FavoriteTwoToneIcon sx={{ color: pink[500] }} />
+                </IconButton>
+              ) : (
+                <IconButton onClick={(e) => favoriteToy(toy.id)}>
+                  <FavoriteBorderTwoToneIcon />
+                </IconButton>
+              )} */}
             </>
             <h3>Toy Name: {toy.toy_name}</h3>
             <img src={toy.image_url}></img>

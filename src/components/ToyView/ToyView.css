@@ -6,6 +6,9 @@ h3 {
   text-align: center;
   padding-bottom: 15px;
 }
+#faHeart {
+  background-color: palevioletred;
+}
 
 /* button {
   background-color: #4caf50; 
