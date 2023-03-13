@@ -56,6 +56,7 @@ function ToyView() {
         return (
           <div className="toys" key={toy.id}>
             <h3>Toy Name: {toy.toy_name}</h3>
+            <img src={toy.image_url}></img>
             <p>Dog Name: {toy.dog_name}</p>
             <p>Brand Name: {toy.brand_name}</p>
             <p>Activity: {toy.activity}</p>
@@ -64,12 +65,9 @@ function ToyView() {
             <p>Dog Size: {toy.dog_size}</p>
             <p>Comments: {toy.comment}</p>
             <p>Purchase Link: {toy.link}</p>
-
             {/* <FavoriteTwoToneIcon />
             <FavoriteBorderTwoToneIcon /> */}
-
             <button onClick={(e) => deleteToy(toy.id)}>Delete Toy</button>
-
             {/* {toy.favorite === true && ( */}
             <button onClick={(e) => unfavoriteToy(toy.id)}>UNFAVORITE</button>
             {/* )} */}

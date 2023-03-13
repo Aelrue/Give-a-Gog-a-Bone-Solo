@@ -17,6 +17,7 @@ function AddToy() {
   const [brand_name, setBrandName] = useState("");
   const [comment, setComment] = useState("");
   const [link, setLink] = useState("");
+  const [image_url, setImageUrl] = useState("");
 
   // function addToyAlert() {
   //   const notify = () => {
@@ -37,6 +38,7 @@ function AddToy() {
         dog_size,
         comment,
         link,
+        image_url,
       },
     });
     history.push("/toyview");
@@ -174,6 +176,15 @@ function AddToy() {
             type="text"
             value={link || ""}
             onChange={(event) => setLink(event.target.value)}
+          ></input>
+          <br />
+
+          <p>OPTIONAL: Submit a URL to this toy's image below!</p>
+          <input
+            placeholder="Image Link"
+            type="text"
+            value={image_url || ""}
+            onChange={(event) => setImageUrl(event.target.value)}
           ></input>
           <br />
 

@@ -14,22 +14,25 @@ function LandingPage() {
   // };
 
   return (
-    <div className="container">
+    <div className="landingPageContainer">
       {/* <div id="header"></div>
        */}
 
       <div id="header">
         <div id="title">
           <h1>Give a Dog a Bone</h1>
-          {/* <div className="grid">
+        </div>
+      </div>
+
+      {/* <div className="grid">
         <div className="grid-col grid-col_8"> */}
-          <div id="details">
-            <p>
-              Looking for the perfect place to keep track of all the different
-              toys your pooch enjoys? Here it is!
-            </p>
-            <p>Please create an account or log in to get started.</p>
-            {/* </div>
+      <div id="details">
+        <p>
+          Looking for the perfect place to keep track of all the different toys
+          your pooch enjoys? Here it is!
+        </p>
+        <p>Please create an account or log in to get started.</p>
+        {/* </div>
         <div className="grid-col grid-col_4">
           <RegisterForm />
 
@@ -40,11 +43,11 @@ function LandingPage() {
             </button>
           </center>
         </div> */}
-            {/* </div> */}
-          </div>
-        </div>
+        {/* </div> */}
       </div>
     </div>
+
+    // </div>
   );
 }
 

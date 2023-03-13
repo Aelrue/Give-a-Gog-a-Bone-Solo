@@ -13,11 +13,13 @@
   height: 100%;
 } */
 
-.container {
-  height: 100vh;
+.landingPageContainer {
+  display: flex;
+  /* height: 100vh; */
 }
 
 #header {
+  /* display: flex; */
   width: 100%;
   height: 85%;
   position: fixed;
@@ -44,14 +46,22 @@
 }
 
 #details {
+  /* padding-top: 300px;
   text-indent: 20px;
   line-height: 1.4em;
-  position: absolute;
-  z-index: 1;
-  top: 365px;
-  left: 7%;
-  width: 500px;
+  display: inline-block;
+  /* z-index: 1; */
+  /* width: 500px;
+  text-align: center; */
+  padding-top: 1000px;
   text-align: center;
+  font-size: 30px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-family: Geneva;
 }
 
 footer {
