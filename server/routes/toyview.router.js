@@ -4,7 +4,7 @@ const router = express.Router();
 
 router.get("/", (req, res) => {
   console.log("in the server GET toys");
-  let queryText = 'SELECT * from "toy" WHERE "user_id" = $1;';
+  let queryText = 'SELECT * from "toy" WHERE "user_id" = $1 ORDER BY "id" ASC;';
   pool
     .query(queryText, [req.user.id])
     .then((result) => {
