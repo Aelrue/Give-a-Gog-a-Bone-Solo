@@ -192,6 +192,25 @@ function AddToy() {
             Submit
           </button>
         </form>
+        <div className="dog">
+          <div className="body"></div>
+          <div className="leg1"></div>
+          <div className="leg2"></div>
+          <div className="leg3"></div>
+          <div className="leg4"></div>
+          <div className="tail"></div>
+          <div className="ear"></div>
+          <div className="nose"></div>
+          <div className="eyewhite"></div>
+          <div className="pupil"></div>
+        </div>
+        <div className="bone">
+          {/* <div className="middle"></div> */}
+          <div className="endleft1"></div>
+          <div className="endleft2"></div>
+          <div className="endright1"></div>
+          <div className="endright2"></div>
+        </div>
       </div>
     </div>
   );

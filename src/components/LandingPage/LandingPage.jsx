@@ -19,10 +19,10 @@ function LandingPage() {
        */}
 
       <div id="header">
-        <img
+        {/* <img
           className="image-header"
           src="https://images.pexels.com/photos/1562983/pexels-photo-1562983.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-        />
+        /> */}
         <div id="title">
           <h1>Give a Dog a Bone</h1>
         </div>

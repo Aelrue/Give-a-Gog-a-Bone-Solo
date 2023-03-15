@@ -1,10 +1,4 @@
-.addToyContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.dog {
+/* .dog {
   background-color: black;
   height: 60px;
   width: 120px;
@@ -114,7 +108,7 @@
   border-radius: 80%;
   position: relative;
   bottom: 398px;
-  left: 54px;
+  left: 53px;
 }
 
 .bone {
@@ -164,4 +158,4 @@
   position: relative;
   top: -64px;
   left: 70px;
-}
+} */
