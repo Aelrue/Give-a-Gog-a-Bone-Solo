@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
 import "./AddToy.css";
-import "./AddToyToastify.css";
 
 function AddToy() {
   const history = useHistory();
@@ -18,12 +16,6 @@ function AddToy() {
   const [comment, setComment] = useState("");
   const [link, setLink] = useState("");
   const [image_url, setImageUrl] = useState("");
-
-  // function addToyAlert() {
-  //   const notify = () => {
-  //     toast.success("Toy Added to Account Successfully!");
-  //   };
-  // }
 
   const handleSubmit = () => {
     dispatch({
@@ -54,6 +46,15 @@ function AddToy() {
         }}
       >
         Account Home
+      </button>
+      <button
+        type="button"
+        className="btn btn_asLink"
+        onClick={() => {
+          history.push("/toyview");
+        }}
+      >
+        View Added Toys
       </button>
 
       <button
@@ -205,7 +206,6 @@ function AddToy() {
           <div className="pupil"></div>
         </div>
         <div className="bone">
-          {/* <div className="middle"></div> */}
           <div className="endleft1"></div>
           <div className="endleft2"></div>
           <div className="endright1"></div>

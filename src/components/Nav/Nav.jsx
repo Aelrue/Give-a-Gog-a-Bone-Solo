@@ -9,41 +9,39 @@ function Nav() {
 
   return (
     <div className="nav">
-      <Link to="/home">
+      {/* <Link to="/home">
         <h2 className="nav-title">Give a Dog a Bone</h2>
       </Link>
       <div>
-        {/* If no user is logged in, show these links */}
         {!user.id && (
-          // If there's no user, show login/registration links
           <Link className="navLink" to="/login">
             Login / Register
           </Link>
-        )}
+        )} */}
 
-        {/* If a user is logged in, show these links */}
-        {user.id && (
-          <>
-            <Link className="navLink" to="/user">
-              Home
-            </Link>
+      {/* If a user is logged in, show these links */}
+      {user.id && (
+        <>
+          <Link className="navLink" to="/user">
+            Home
+          </Link>
 
-            <Link className="navLink" to="/info">
-              Info Page
-            </Link>
-            <Link className="navLink" to="/addtoy">
-              Add Toy
-            </Link>
+          <Link className="navLink" to="/info">
+            Info Page
+          </Link>
+          <Link className="navLink" to="/addtoy">
+            Add Toy
+          </Link>
 
-            <LogOutButton className="navLink" />
-          </>
-        )}
+          <LogOutButton className="navLink" />
+        </>
+      )}
 
-        <Link className="navLink" to="/about">
-          About
-        </Link>
-      </div>
+      {/* <Link className="navLink" to="/about">
+        About
+      </Link> */}
     </div>
+    // </div>
   );
 }
 
