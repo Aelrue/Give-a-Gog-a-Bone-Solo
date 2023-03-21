@@ -1,161 +1,20 @@
-/* .dog {
-  background-color: black;
-  height: 60px;
-  width: 120px;
-  position: absolute;
-  top: 72%;
-  left: 50%;
-  border-radius: 0px 0px 0px 120px;
-}
-.body {
-  background-color: black;
-  height: 75px;
-  width: 180px;
-  position: relative;
-  top: 55px;
-  left: 70px;
-  border-radius: 0px 0px 0px 60px;
+.image {
+  transform: scaleX(-1);
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
 }
 
-.leg1,
-.leg2,
-.leg3,
-.leg4 {
-  background-color: black;
-  height: 50px;
-  width: 18px;
-  position: relative;
-}
-
-.leg1 {
-  left: 100px;
-  top: 48px;
-}
-
-.leg2 {
-  left: 130px;
-  bottom: 2px;
-}
-
-.leg3 {
-  left: 205px;
-  bottom: 50px;
-  background-color: black;
+.text {
+  position: fixed;
   z-index: -1;
+  top: 20%;
+  left: 12%;
+  font-size: larger;
+  text-align: center;
 }
 
-.leg4 {
-  left: 232px;
-  bottom: 100px;
+h2 {
+  color: 004940;
 }
-
-.tail {
-  width: 0;
-  height: 0;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 100px solid black;
-  position: relative;
-  bottom: 300px;
-  left: 230px;
-  transform: rotate(30deg);
-  transform-origin: bottom;
-  animation: wag 1s infinite;
-}
-
-@keyframes wag {
-  50% {
-    transform: rotate(10deg);
-  }
-}
-
-.ear {
-  position: relative;
-  float: left;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 25px 60px 8px;
-  border-color: transparent transparent black transparent;
-  left: 87.45px;
-  bottom: 434px;
-}
-
-.nose {
-  background-color: rgb(56, 56, 56);
-  height: 15px;
-  width: 12px;
-  border-radius: 50%;
-  position: relative;
-  right: 2.5px;
-  bottom: 380px;
-}
-
-.eyewhite {
-  background-color: white;
-  height: 16px;
-  width: 9px;
-  border-radius: 50%;
-  position: relative;
-  bottom: 380px;
-  left: 55px;
-}
-
-.pupil {
-  background-color: brown;
-  height: 15px;
-  width: 9px;
-  border-radius: 80%;
-  position: relative;
-  bottom: 398px;
-  left: 53px;
-}
-
-.bone {
-  background-color: cornsilk;
-  height: 25px;
-  width: 80px;
-  position: absolute;
-  top: 15%;
-  left: 35%;
-}
-
-.endleft1 {
-  background-color: cornsilk;
-  height: 25px;
-  width: 25px;
-  border-radius: 800%;
-  position: relative;
-  top: -10px;
-  left: -12px;
-}
-
-.endleft2 {
-  background-color: cornsilk;
-  height: 25px;
-  width: 25px;
-  border-radius: 800%;
-  position: relative;
-  top: -15px;
-  left: -12px;
-}
-
-.endright1 {
-  background-color: cornsilk;
-  height: 25px;
-  width: 25px;
-  border-radius: 500%;
-  position: relative;
-  top: -62px;
-  left: 70px;
-}
-
-.endright2 {
-  background-color: cornsilk;
-  height: 25px;
-  width: 25px;
-  border-radius: 500%;
-  position: relative;
-  top: -64px;
-  left: 70px;
-} */

@@ -9,7 +9,7 @@ import {
 import { useDispatch, useSelector } from "react-redux";
 
 import Nav from "../Nav/Nav";
-import Footer from "../Footer/Footer";
+// import Footer from "../Footer/Footer";
 // import Header from "../Header/Header";
 
 import ProtectedRoute from "../ProtectedRoute/ProtectedRoute";
@@ -133,7 +133,7 @@ function App() {
             <h1>404</h1>
           </Route>
         </Switch>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </Router>
   );

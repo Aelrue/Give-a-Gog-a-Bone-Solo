@@ -4,6 +4,7 @@ import "./ToyView.css";
 import { useHistory } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faPaw } from "@fortawesome/free-solid-svg-icons";
+import DeleteForeverIcon from "@mui/icons-material/DeleteForever";
 import IconButton from "@mui/material/IconButton";
 
 function ToyView() {
@@ -83,6 +84,9 @@ function ToyView() {
                     <FontAwesomeIcon icon={faPaw} color="mediumvioletred" />
                   </IconButton>
                 )}
+                <IconButton button onClick={(e) => deleteToy(toy.id)}>
+                  <DeleteForeverIcon fontSize="large" />
+                </IconButton>
                 <h3>Toy Name: {toy.toy_name}</h3>
                 <img src={toy.image_url}></img>
                 <p>Dog Name: {toy.dog_name}</p>
@@ -93,7 +97,6 @@ function ToyView() {
                 <p>Dog Size: {toy.dog_size}</p>
                 <p>Comments: {toy.comment}</p>
                 <p>Purchase Link: {toy.link}</p>
-                <button onClick={(e) => deleteToy(toy.id)}>Delete Toy</button>
               </div>
             );
           })}

@@ -16,6 +16,7 @@ function AddToy() {
   const [comment, setComment] = useState("");
   const [link, setLink] = useState("");
   const [image_url, setImageUrl] = useState("");
+  const [favorite] = useState(false);
 
   const handleSubmit = () => {
     dispatch({
@@ -30,6 +31,7 @@ function AddToy() {
         dog_size,
         comment,
         link,
+        favorite,
         image_url,
       },
     });
