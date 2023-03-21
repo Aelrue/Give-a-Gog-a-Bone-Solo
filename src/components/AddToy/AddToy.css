@@ -98,6 +98,29 @@
   bottom: 380px;
 }
 
+.tongue {
+  background-color: rgb(251, 106, 106);
+  position: relative;
+  z-index: -1;
+  border-radius: 25%;
+  height: 25px;
+  width: 12px;
+  bottom: 10px;
+  left: -23px;
+  transform: rotate(10deg);
+  animation: pant 1s infinite;
+}
+
+@keyframes pant {
+  0%,
+  105% {
+    bottom: 0;
+  }
+  50% {
+    bottom: 23px;
+  }
+}
+
 .eyewhite {
   background-color: white;
   height: 16px;
@@ -119,7 +142,7 @@
 }
 
 .bone {
-  background-color: rgb(248, 233, 170);
+  background-color: rgb(250, 248, 241);
   height: 25px;
   width: 80px;
   position: fixed;
@@ -128,7 +151,7 @@
 }
 
 .endleft1 {
-  background-color: rgb(248, 233, 170);
+  background-color: rgb(250, 248, 241);
   height: 25px;
   width: 25px;
   border-radius: 800%;
@@ -138,7 +161,7 @@
 }
 
 .endleft2 {
-  background-color: rgb(248, 233, 170);
+  background-color: rgb(250, 248, 241);
   height: 25px;
   width: 25px;
   border-radius: 800%;
@@ -148,7 +171,7 @@
 }
 
 .endright1 {
-  background-color: rgb(248, 233, 170);
+  background-color: rgb(250, 248, 241);
   height: 25px;
   width: 25px;
   border-radius: 500%;
@@ -158,15 +181,11 @@
 }
 
 .endright2 {
-  background-color: rgb(248, 233, 170);
+  background-color: rgb(250, 248, 241);
   height: 25px;
   width: 25px;
   border-radius: 500%;
   position: relative;
   top: -64px;
   left: 70px;
-}
-
-footer {
-  color: white;
 }

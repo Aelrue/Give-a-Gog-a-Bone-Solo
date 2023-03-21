@@ -1,12 +1,12 @@
 html,
-body,
-#react-root {
+body #react-root {
   height: 100%;
 }
 
 body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 0px;
+  background-color: blanchedalmond;
 }
 
 img {

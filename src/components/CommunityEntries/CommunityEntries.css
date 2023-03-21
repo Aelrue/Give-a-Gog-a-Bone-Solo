@@ -13,19 +13,12 @@ h3 {
 }
 
 .toys {
-  /* grid-row: auto; */
   display: absolute;
   margin: auto;
-  /* flex-wrap: wrap;
-  flex-direction: column; */
-  /* border-radius: 5px; */
   padding: 20px;
   font-size: 150%;
   border: 1px solid gray;
   box-shadow: 1px 1px 4px;
-  /* display: inline-block;
-  vertical-align: top;
-  border: 1px solid black; */
 
   width: 500px;
   height: auto;

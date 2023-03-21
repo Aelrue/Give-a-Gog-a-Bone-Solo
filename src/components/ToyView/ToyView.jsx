@@ -5,7 +5,6 @@ import { useHistory } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faPaw } from "@fortawesome/free-solid-svg-icons";
 import IconButton from "@mui/material/IconButton";
-import Footer from "../Footer/Footer";
 
 function ToyView() {
   const dispatch = useDispatch();

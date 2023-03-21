@@ -202,8 +202,12 @@ function AddToy() {
           <div className="tail"></div>
           <div className="ear"></div>
           <div className="nose"></div>
+
           <div className="eyewhite"></div>
           <div className="pupil"></div>
+        </div>
+        <div className="tongue">
+          <div className="tonguebody"></div>
         </div>
         <div className="bone">
           <div className="endleft1"></div>
