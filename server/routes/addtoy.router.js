@@ -6,7 +6,8 @@ router.post("/", (req, res) => {
   console.log("in addtoy post router", req.body);
 
   const insertToyQuery = `INSERT INTO "toy" ("dog_name", "toy_name", "brand_name",   
-  "activity","texture", "features", "dog_size","link", "comment", "user_id", "favorite", "image_url") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"`;
+  "activity","texture", "features", "dog_size","link", "comment", "user_id", "favorite", "image_url") VALUES 
+  ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"`;
 
   const queryParams = [
     // req.body.toy_id,
